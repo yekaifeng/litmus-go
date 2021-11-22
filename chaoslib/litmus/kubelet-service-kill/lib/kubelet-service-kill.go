@@ -162,7 +162,7 @@ func CreateHelperPod(experimentsDetails *experimentTypes.ExperimentDetails, clie
 					},
 					Args: []string{
 						"-c",
-						"sleep 10 && systemctl stop kubelet && sleep " + strconv.Itoa(experimentsDetails.ChaosDuration) + " && systemctl start kubelet",
+						"sleep 10 && systemctl stop atomic-openshift-node && sleep " + strconv.Itoa(experimentsDetails.ChaosDuration) + " && systemctl start atomic-openshift-node",
 					},
 					Resources: experimentsDetails.Resources,
 					VolumeMounts: []apiv1.VolumeMount{
